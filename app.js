@@ -21,9 +21,10 @@ const posts = [];
 
 
 app.get("/", function(req, res){
- 
+
   res.render("home", { homeContent : homeStartingContent, posts : posts});
 //  console.log(posts);
+
 })
 
 
@@ -55,7 +56,7 @@ const postTitle =  _.lowerCase(req.params.postName);
 posts.forEach(function(post){
   const storedTitle =_.lowerCase(post.title);
   if(postTitle === storedTitle){
-    console.log("Matched");
+    //console.log("Matched");
       res.render("post", {postTitle : post.title, postBody : post.body})
   }
 
